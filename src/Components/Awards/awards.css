@@ -1,0 +1,249 @@
+.awards{
+    display: flex;
+    flex-direction: column;
+    padding: 70px 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 6vh;
+}
+
+.a-top{
+    display: flex;
+    flex-direction: column;
+    background-image: url('contact-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 50px 70px;
+    justify-content: center;
+    align-items: center;
+}
+
+.a-top-1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20vw;
+}
+
+.a-top-1 img{
+    width: 200px;
+    height: 200px;
+    border-radius: 0;
+}
+
+.a-top h1{
+    font-family: 'IBM Plex Sans KR';
+font-style: normal;
+font-weight: 700;
+font-size: 39.9486px;
+line-height: 60px;
+letter-spacing: 0.01em;
+color: #175FA2;
+}
+
+.a-top-1-1{
+    display: flex;
+    flex-direction: column;
+    /* width: 50vw; */
+}
+
+.a-top-1-1 h2{
+    font-family: 'IBM Plex Sans KR';
+font-style: normal;
+font-weight: 700;
+font-size: 39.9486px;
+/* line-height: 60px; */
+letter-spacing: 0.01em;
+}
+
+.a-top-1-1 ul li{
+    font-family: 'IBM Plex Sans KR';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 60px;
+letter-spacing: 0.01em;
+}
+
+.a-bottom{
+    display: flex;
+    flex-direction: column;
+    padding: 50px 70px;
+    justify-content: center;
+    align-items: center;
+    gap: 8vh;
+}
+
+.a-bottom h2{
+    font-family: 'IBM Plex Sans KR';
+font-style: normal;
+font-weight: 700;
+font-size: 39.9486px;
+/* line-height: 60px; */
+letter-spacing: 0.01em;
+}
+
+.a-b-1{
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.a-b-2{
+    display: flex;
+    width: 65vw;
+    font-family: 'IBM Plex Sans KR';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 35px;
+letter-spacing: 0.01em;
+border: 1px solid #175FA2;
+border-radius: 15px;
+padding: 14px;
+}
+
+@media only screen and (max-width:902px){
+    .a-top-1{
+        gap: 12vw;
+    }
+    .a-top-1-1 h2{
+        font-size: 35px;
+    }
+    .a-top-1-1 ul li{
+        font-size: 15px;
+    }
+}
+@media only screen and (max-width:782px){
+    .a-top-1{
+        gap: 10vw;
+    }
+    .a-top-1 img{
+        width: 150px;
+        height: 150px;
+    }
+    .a-top-1-1 h2{
+        font-size: 30px;
+    }
+    .a-top-1-1 ul li{
+        font-size: 15px;
+    }
+}
+@media only screen and (max-width:700px){
+    .a-top{
+        padding: 40px 50px;
+    }
+    .a-bottom{
+        padding: 40px 50px;
+    }
+    .a-bottom h2{
+        font-size: 33px;
+    }
+    .a-b-2{
+        font-size: 16px;
+    }
+}
+@media only screen and (max-width:625px){
+    .a-top{
+        padding: 40px 40px;
+    }
+    .a-top-1{
+        flex-direction: column;
+    }
+    .a-top-1-1 h2{
+        font-size: 26px;
+    }
+    .a-top-1-1 ul li{
+        font-size: 13px;
+    }
+    .a-bottom{
+        padding: 40px 40px;
+    }
+    .a-bottom h2{
+        font-size: 26px;
+    }
+    .a-b-2{
+        font-size: 13px;
+    }
+}
+@media only screen and (max-width:515px){
+    .a-top-1-1 h2{
+        font-size: 20px;
+        /* line-height: 0px; */
+    }
+    .a-bottom h2{
+        font-size: 20px;
+    }
+}
+@media only screen and (max-width:450px){
+    .a-top h1{
+        font-size: 30px;
+    }   
+    .a-top-1 img{
+        width: 100px;
+        height: 100px;
+    }
+    .a-top-1-1 h2{
+        font-size: 17px;
+        /* line-height: 0px; */
+    }
+    .a-bottom h2{
+        font-size: 17px;
+        /* line-height: 0; */
+    }
+    .a-top-1-1 ul li{
+        /* font-size: 10px; */
+        line-height: 40px;
+    }
+}
+@media only screen and (max-width:400px){
+    .a-top-1-1 h2{
+        font-size: 14px;
+        line-height: 0px;
+    }
+    .a-bottom h2{
+        font-size: 14px;
+        /* line-height: 0; */
+    }
+    .a-top-1-1 ul li{
+        font-size: 10px;
+        line-height: 30px;
+    }
+    .a-b-2{
+        font-size: 10px;
+    }
+}
+@media only screen and (max-width:350px){
+    .a-top h1{
+        font-size: 25px;
+    }
+    .a-top-1-1 h2{
+        font-size: 12px;
+        line-height: 0px;
+    }
+    .a-bottom h2{
+        font-size: 12px;
+        /* line-height: 0; */
+    }
+    .a-top-1-1 ul li{
+        font-size: 8px;
+        line-height: 30px;
+    }
+    .a-b-2{
+        font-size: 8px;
+    }
+}
+@media only screen and (max-width:325px){
+    .a-top-1-1{
+        width: 50vw;
+    }
+    .a-top h1{
+        font-size: 20px;
+    }
+    .a-top-1-1 h2{
+        font-size: 12px;
+        line-height: 0px;
+    }
+}

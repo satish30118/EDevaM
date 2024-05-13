@@ -1,0 +1,224 @@
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 40px 20px 5px;
+    align-items: center;
+}
+
+.nav-right-a {
+    cursor: pointer;
+    text-decoration: none !important;
+    color: black;
+    font-weight: 500;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5vw;
+    line-height: 18px;
+}
+
+.nav-right ul a.active {
+    color: blue;
+}
+
+.nav img {
+    width: 16vw;
+    height: 8vh;
+    border-radius: 50px;
+}
+
+.nav-right ul {
+    display: flex;
+    gap: 4vw;
+    margin-bottom: 0;
+}
+
+.side-nav {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 22px;
+    width: 22px;
+    cursor: pointer;
+}
+/* .side-nav {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+} */
+
+#links {
+    display: none;
+    width: 50vw;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(182.15deg, #F9FFDF -83.5%, #C7E6FF 102.45%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    overflow-y: scroll;
+    z-index: 100000000;
+    margin-top:-4px;
+    margin-left: 50vw;
+    position: absolute;
+    top: calc(8vh + 43px);
+    /* -webkit-animation: slide 0.5s forwards;
+    animation: slide 0.5s forwards; */
+}
+/* @-webkit-keyframes slide {
+    100% {
+        margin-left: 50vw;
+    }
+}
+@keyframes slide {
+    100%{
+        margin-left: 50vw;
+    }
+} */
+
+#links ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+}
+
+.nav-links-a {
+    color: black;
+    font-weight: 600;
+    font-size: 3vw;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+
+.l1 {
+    height: 3px;
+  width: 100%;
+  background-color: blue;
+  transition: all 100ms ease-in-out;
+}
+
+.l2 {
+    height: 3px;
+  width: 100%;
+  background-color: blue;
+  transition: all 100ms ease-in-out;
+}
+
+.l3 {
+    height: 3px;
+  width: 100%;
+  background-color: blue;
+  transition: all 100ms ease-in-out;
+}
+/* .l1 {
+    border: 3px solid blue;
+    border-radius: 30px;
+    width: 2vw;
+}
+
+.l2 {
+    border: 3px solid blue;
+    border-radius: 30px;
+    width: 4vw;
+}
+
+.l3 {
+    display: flex;
+
+    border: 3px solid blue;
+    border-radius: 30px;
+    width: 2vw;
+} */
+
+.hamburger-l1{
+    transition: all 100ms ease-in-out;
+  transform: rotate(45deg);
+  transform-origin: top left;
+  height: 3px;
+  background-color: blue;
+  width: 28px;
+}
+.hamburger-l2{
+    transition: all 100ms ease-in-out;
+  transform-origin: center;
+  width: 0;
+  height: 3px;
+  background-color: blue;
+}
+.hamburger-l3{
+    transition: all 100ms ease-in-out;
+  transform: rotate(-45deg);
+  transform-origin: bottom left;
+  height: 3px;
+  background-color: blue;
+  width: 28px;
+}
+/* .hamburger-l1{
+    position: absolute;
+    right: 24px;
+    top: 40px;
+    border: 3px solid blue;
+    border-radius: 30px;
+    width: 35px;
+    transform: rotate(40deg);
+    transform-origin: left;
+}
+.hamburger-l2{
+    position: absolute;
+    right: 30px;
+    top: 53px;
+    border: 3px solid blue;
+    border-radius: 30px;
+    width: 35px;
+    transform: rotate(-40deg);
+}
+.hamburger-l3{
+    display: none;
+    border: 3px solid blue;
+    border-radius: 30px;
+    width: 30px;
+    transform: rotate(45deg);
+    transform-origin: right;
+} */
+
+@media only screen and (max-width:920px) {
+    .nav-right-a {
+        font-size: 17px;
+    }
+    .nav-right ul{
+        gap:3vw;
+    }
+    .nav img{
+        width:16vw;
+        height:10vh;
+    }
+}
+
+@media only screen and (max-width:815px) {
+    .nav-right-a {
+        font-size: 14px;
+    }
+    .nav img{
+        width:18vw;
+        height: 8vh;
+    }
+}
+
+@media only screen and (max-width:706px) {
+    .side-nav {
+        display: flex;
+    }
+
+    .nav-right ul {
+        display: none;
+    }
+    .nav img{
+        width: 20vh;
+    height: 8vh;
+    }
+    .nav{
+        padding-left: 0;
+    }
+}
