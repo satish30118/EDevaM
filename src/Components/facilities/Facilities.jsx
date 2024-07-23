@@ -13,26 +13,32 @@ import img10 from "./img/IMG_2573.jpg";
 const Facilities = () => {
   const facility = [
     {
+      id: 0,
+      topic: "Neware battery Cycle",
+      img: img10,
+      dec: "",
+    },
+    {
       id: 1,
-      topic: "",
+      topic: "Abrin Battery Cycle",
       img: img1,
       dec: "",
     },
     {
       id: 2,
-      topic: "",
+      topic: "Gamry Potentiostat",
       img: img2,
       dec: "",
     },
     {
       id: 3,
-      topic: "",
+      topic: "Tube Furnace",
       img: img3,
       dec: "",
     },
     {
       id: 4,
-      topic: "",
+      topic: "Hot Air Oven",
       img: img4,
       dec: "",
     },
@@ -44,34 +50,29 @@ const Facilities = () => {
     },
     {
       id: 6,
-      topic: "",
+      topic: "Centrifuge",
       img: img6,
       dec: "",
     },
     {
       id: 7,
-      topic: "",
+      topic: "Disc Cutter",
       img: img7,
       dec: "",
     },
     {
       id: 8,
-      topic: "",
+      topic: "Sonicator",
       img: img8,
       dec: "",
     },
     {
       id: 9,
-      topic: "",
+      topic: "Weighing Balance",
       img: img9,
       dec: "",
     },
-    {
-      id: 10,
-      topic: "",
-      img: img10,
-      dec: "",
-    },
+    
   ];
   return (
     <>
@@ -88,6 +89,7 @@ const Facilities = () => {
                 }}
               >
                 <img src={data.img} alt="research" />
+                <div style={{fontWeight:"600",fontSize:"25px"}}>{data.topic}</div>
               </div>
             </div>
           );

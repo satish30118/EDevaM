@@ -84,7 +84,7 @@ const Awards = () => {
         </div>
       </div> */}
       <div className="a-bottom">
-        <h2>Special Courses and Lectures</h2>
+        <h2>Awards and Achievements</h2>
         <div className="a-b-1">
           {lec.map((data) => {
             return <div className="a-b-2">{data.title}</div>;

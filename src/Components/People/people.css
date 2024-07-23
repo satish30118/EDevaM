@@ -40,7 +40,10 @@
   /* border: 2px solid red; */
   /* padding: 50px 40px; */
 }
+
 .people-card-div-left {
+  /* border: 4px solid red; */
+  height: 360px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -55,10 +58,22 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   /* padding: 50px 40px; */
 }
-.people-card-div-left h2{
-  font-size: 24px;
+
+.people-card-div-left div {
+  margin: 0;
+  padding: 0;
+  height: 20%;
+  /* border: 4px solid black; */
 }
-.people-card-div-right p{
+
+.people-card-div-left h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+  /* border: 2px solid red; */
+}
+
+.people-card-div-right p {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,40 +83,48 @@
   font-size: 21px;
   line-height: 29px;
   letter-spacing: 0.01em;
+  text-align: justify
 }
 
 .people-card-div-left img {
-  width: 24vw;
-  height: 25vh;
+  width: 23vw;
+  /* border:5px solid rebeccapurple; */
+  height: 80%;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-@media only screen and (max-width: 950px){
-  .people-card-div-left h2{
+@media only screen and (max-width: 950px) {
+  .people-card-div-left h2 {
     font-size: 20px;
   }
-  .people-card-div-right p{
-    font-size:18px;
+
+  .people-card-div-right p {
+    font-size: 18px;
   }
 }
-@media only screen and (max-width: 800px){
-  .people-card-div-left h2{
+
+@media only screen and (max-width: 800px) {
+  .people-card-div-left h2 {
     font-size: 17px;
   }
-  .people-card-div-right p{
-    font-size:16px;
+
+  .people-card-div-right p {
+    font-size: 16px;
   }
 }
-@media only screen and (max-width: 700px){
-  .people-card-div{
+
+@media only screen and (max-width: 700px) {
+  .people-card-div {
     flex-direction: column;
   }
-  .people-card-div-left{
+
+  .people-card-div-left {
     width: 60vw;
   }
+
   .people-card-div-left img {
     width: 60vw;
     height: 40vh;
@@ -110,42 +133,67 @@
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
   }
-  .people-card-div-left h2{
+
+  .people-card-div-left h2 {
     font-size: 25px;
   }
-  .people-card-div-right p{
-    font-size:17px;
+
+  .people-card-div-right p {
+    font-size: 17px;
   }
 }
-@media only screen and (max-width: 550px){
-  .people h1{
+
+@media only screen and (max-width: 550px) {
+  .people h1 {
     font-size: 30px;
   }
 }
-@media only screen and (max-width: 460px){
-  .people h1{
+
+@media only screen and (max-width: 460px) {
+  .people h1 {
     font-size: 27px;
   }
 }
-@media only screen and (max-width: 450px){
-  .people-card-div-left h2{
+
+@media only screen and (max-width: 450px) {
+  .people-card-div-left h2 {
     font-size: 22px;
   }
-  .people-card-div-right p{
-    font-size:16px;
+
+  .people-card-div-right p {
+    font-size: 16px;
   }
-  .people h1{
+
+  .people h1 {
     font-size: 27px;
   }
 }
-@media only screen and (max-width: 350px){
-  .people-card-div-left h2{
+
+@media only screen and (max-width: 350px) {
+  .people-card-div-left h2 {
     font-size: 18px;
   }
-  .people-card-div-right p{
-    font-size:15px;
+
+  .people-card-div-right p {
+    font-size: 15px;
   }
-  .people h1{
+
+  .people h1 {
     font-size: 25px;
   }
+}
+
+
+.people-btn {
+  /* border: 2px solid blue; */
+}
+
+.people-btn button {
+  padding: 6px 30px;
+  cursor: pointer;
+  border: 2px solid blue;
+  border-radius: 10px;
+  margin: 0 20px;
+  font-weight: 600;
+  font-size: 22px;
 }
