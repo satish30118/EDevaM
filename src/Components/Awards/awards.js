@@ -88,7 +88,7 @@ const Awards = () => {
         <h2>Awards and Achievements</h2>
         <div className="a-b-1">
           {AwardsData.map((data) => {
-            return <div className="a-b-2">{data.title}</div>;
+            return <div className="a-b-2" data-aos="fade-up">{data.title}</div>;
           })}
         </div>
       </div>
@@ -96,7 +96,7 @@ const Awards = () => {
         <h2>Lectures Delivered</h2>
         <div className="a-b-1">
           {lec.map((data) => {
-            return <div className="a-b-2">{data.title}</div>;
+            return <div className="a-b-2" data-aos="fade-up">{data.title}</div>;
           })}
         </div>
       </div>
@@ -104,7 +104,7 @@ const Awards = () => {
         <h2>Conference presentations</h2>
         <div className="a-b-1">
           {conf.map((data) => {
-            return <div className="a-b-2">{data.title}</div>;
+            return <div className="a-b-2" data-aos="fade-up">{data.title}</div>;
           })}
         </div>
       </div>

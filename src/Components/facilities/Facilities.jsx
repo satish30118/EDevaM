@@ -80,7 +80,7 @@ const Facilities = () => {
       <div className="s-bottom" >
         {facility.map((data) => {
           return (
-            <div className="s-b-1" style={{ width: "auto" }}>
+            <div className="s-b-1" style={{ width: "auto" }} >
               <div
                 style={{
                   textAlign: "center",

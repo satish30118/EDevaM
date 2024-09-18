@@ -121,15 +121,15 @@ const People = () => {
                 return (
                   <div className="people-card-div">
                     <div className="people-card-div-left">
-                      <img src={data.img} alt="people" />
+                      <img src={data.img} alt="people" data-aos="fade-up"/>
                       <div>
-                        <h2>{data.name}</h2>
+                        <h2 data-aos="fade-up">{data.name}</h2>
                         <Link to={data.link}>
                           <FaLinkedinIn />
                         </Link>
                       </div>
                     </div>
-                    <div className="people-card-div-right">
+                    <div className="people-card-div-right" data-aos="fade-up">
                       <p>{data.desc}</p>
                     </div>
                   </div>
@@ -145,15 +145,15 @@ const People = () => {
                 return (
                   <div className="people-card-div">
                     <div className="people-card-div-left">
-                      <img src={data.img} alt="people" />
+                      <img src={data.img} alt="people" data-aos="fade-up" />
                       <div>
-                        <h2>{data.name}</h2>
+                        <h2 data-aos="fade-up">{data.name}</h2>
                         <Link to={data.link}>
                           <FaLinkedinIn />
                         </Link>
                       </div>
                     </div>
-                    <div className="people-card-div-right">
+                    <div className="people-card-div-right" data-aos="fade-up">
                       <p>{data.desc}</p>
                     </div>
                   </div>
@@ -168,14 +168,14 @@ const People = () => {
                 return (
                   <div className="people-card-div">
                     <div className="people-card-div-left">
-                      <img src={data.img} alt="people" />
-                      <h2>{data.name}</h2>
+                      <img src={data.img} alt="people" data-aos="fade-up" />
+                      <h2 data-aos="fade-up">{data.name}</h2>
                       <Link to={data.link}>
                         <FaLinkedinIn />
                       </Link>
                     </div>
                     <div className="people-card-div-right">
-                      <p>{data.desc}</p>
+                      <p data-aos="fade-up">{data.desc}</p>
                     </div>
                   </div>
                 );

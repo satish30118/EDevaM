@@ -149,7 +149,7 @@ const Publications = () => {
         <h2>Our Publications</h2>
         <div className="a-b-1">
           {publication.map((data) => {
-            return <div className="a-b-2" key={data.id}>{data.title}</div>;
+            return <div className="a-b-2" key={data.id} data-aos="fade-up">{data.title}</div>;
           })}
         </div>
       </div>

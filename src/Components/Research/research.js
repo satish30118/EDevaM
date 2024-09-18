@@ -48,12 +48,12 @@ const Research = () => {
       <div className="s-bottom">
         {res.map((data) => {
           return (
-            <div className="s-b-1">
+            <div className="s-b-1" data-aos="fade-up">
               <div className="s-b-1-1">
-                <h2>{data.topic}</h2>
-                <p>{data.desc}</p>
+                <h2 data-aos="fade-up">{data.topic}</h2>
+                <p data-aos="fade-up">{data.desc}</p>
               </div>
-                <img src= {data.img} alt="research" />
+                <img src= {data.img} alt="research" data-aos="fade-up"/>
             </div>
           )
         })}
