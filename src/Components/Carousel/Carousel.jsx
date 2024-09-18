@@ -7,14 +7,14 @@ import "./Carousel.css";
 
 export default function HomeCarousel() {
   var settings = {
-    dots: true,
+    dots: false,
     infinite: true,
-    fade:true,
-    speed: 2000,
+    speed: 600,
+    autoplaySpeed: 2000,
     slidesToShow: 1,
     slidesToScroll: 1,
+    initialSlide: 0,
     autoplay: true,
-    autoplaySpeed: 3000,
   };
   return (
     <>

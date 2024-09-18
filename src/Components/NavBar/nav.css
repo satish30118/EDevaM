@@ -58,6 +58,7 @@
 
 #links {
     display: none;
+    padding: 20px 0 10px;
     width: 50vw;
     justify-content: center;
     align-items: center;
@@ -67,8 +68,9 @@
     z-index: 100000000;
     margin-top: -4px;
     margin-left: 50vw;
-    position: absolute;
     top: calc(8vh + 43px);
+    position: fixed;
+    top: 60px;
     /* -webkit-animation: slide 0.5s forwards;
     animation: slide 0.5s forwards; */
 }
@@ -235,7 +237,7 @@
     }
 
     .nav {
-        padding:0 10px;
+        padding: 0 10px;
         /* flex-direction: row-reverse; */
     }
 }

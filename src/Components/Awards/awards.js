@@ -1,17 +1,9 @@
 import React from "react";
 import "./awards.css";
 import carbon from "../Images/carbon.png";
+import AwardsData from "./AwardsData";
 
 const lec = [
-  {
-    title:`Congratulations to Uttam Gupta, Subham Khange, and Vinod Kumar for winning 1st place in the idea competition at SynergiA, CTRANS Industry-Academia Meet at IIT Roorkee, on February 16-17, 2023. Their poster, titled "Solar Power-Based Wireless On-Road Charging for Electric Vehicles," won a prize of ₹10,000.`
-  },
-  {title:`Congratulations to Uttam Gupta, Ashwini Kumar Sharma 	"Electrochemical modeling of aging in Lithium-ion batteries"	Best poster presentation, Research Scholors Day,	Chemical Engineering Department, IIT Roorkee,	28th October 2023.`
-  },
-  {
-    title:`Congratulations to Abhishek Dharmesh, Subham khange, Vinod kumar, Poonam Rani	"Engineering Challenges in EV Safety - Stage 1"	Finalist	"Engineering Challenges in EV Safety - Stage 1"	Centre for Safety Engineering (CSE), IIT Gandhinagar, India	September 26. 2022	
-`
-  },
   {
     title: `Delivered an invited talk on "Mathematical Modeling of Li-ion Batteries and Challenges in Large-Scale Battery Applications", 17th Dec, 2022, National Conference on Energy Materials and Devices (E-MADs) 2022 at IIT Jodhpur`,
   },
@@ -94,6 +86,14 @@ const Awards = () => {
       </div> */}
       <div className="a-bottom">
         <h2>Awards and Achievements</h2>
+        <div className="a-b-1">
+          {AwardsData.map((data) => {
+            return <div className="a-b-2">{data.title}</div>;
+          })}
+        </div>
+      </div>
+      <div className="a-bottom">
+        <h2>Lectures Delivered</h2>
         <div className="a-b-1">
           {lec.map((data) => {
             return <div className="a-b-2">{data.title}</div>;

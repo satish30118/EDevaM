@@ -12,7 +12,6 @@ import yash from "./img/Yash.png";
 import prerak from "./img/Prerak.png";
 import sahil from "./img/Sahil.jpeg";
 
-
 const postdoc = [
   {
     img: poonam,
@@ -53,10 +52,10 @@ const phd = [
 const mtech = [
   {
     img: sahil,
-    name:"Sahil Yadav",
-    link:`https://www.linkedin.com/in/sahil-yadav-741275194/`,
-    desc:`My name is Sahil Yadav, and I hold an undergraduate degree in Chemical Engineering. I am currently pursuing a Master's degree in Chemical Engineering at IIT Roorkee. During my undergraduate studies, I worked on a project focused on the "Extraction of Silica from Rice Husk", where I gained valuable research experience. Presently, I am working on the modeling and simulation of lithium-ion batteries. My research involves formulating and analyzing mathematical models to investigate the thermal behavior of lithium-ion batteries, particularly during thermal runaway, to advance battery safety and performance.`
-  }
+    name: "Sahil Yadav",
+    link: `https://www.linkedin.com/in/sahil-yadav-741275194/`,
+    desc: `My name is Sahil Yadav, and I hold an undergraduate degree in Chemical Engineering. I am currently pursuing a Master's degree in Chemical Engineering at IIT Roorkee. During my undergraduate studies, I worked on a project focused on the "Extraction of Silica from Rice Husk", where I gained valuable research experience. Presently, I am working on the modeling and simulation of lithium-ion batteries. My research involves formulating and analyzing mathematical models to investigate the thermal behavior of lithium-ion batteries, particularly during thermal runaway, to advance battery safety and performance.`,
+  },
 ];
 const intern = [
   {
@@ -77,7 +76,7 @@ const alumini = [
     img: prerak,
     name: "Prerak Upadhyay",
     link: "",
-    desc: `I am "prerak upadhyay" doing my masters (M.Tech.) degree from Department of Chemical Engineering, IIT ROORKEE in 2023. Currently i am working on "Parametric analysis of sodium-ion battery via mathematical modeling".
+    desc: `I am "Prerak Upadhyay" doing my masters (M.Tech.) degree from Department of Chemical Engineering, IIT ROORKEE in 2023. Currently i am working on "Parametric analysis of sodium-ion battery via mathematical modeling".
     I did my B.Tech from Delhi Technological University in 2020, During my bachelors I did a major project entitled "Polyaniline/Titanium/Cerium nitrate pigment for epoxy based anticorrosion coatings" under the guidance of Dr. CM Pandey. Apart from the major project, i did two internships.`,
   },
 ];
@@ -139,7 +138,7 @@ const People = () => {
             </div>
           </div>
 
-          <div className="p-2">
+          <div className="p-4">
             <h2>Ph.D</h2>
             <div className="people-card">
               {phd.map((data) => {
@@ -162,7 +161,7 @@ const People = () => {
               })}
             </div>
           </div>
-          <div className="p-3">
+          <div className="p-4">
             <h2>M.Tech</h2>
             <div className="people-card">
               {mtech.map((data) => {
@@ -186,29 +185,30 @@ const People = () => {
         </div>
 
         <div
-          className="p-4"
           style={{
             display: `${!active ? "block" : "none"} `,
           }}
         >
-          <h2>Alumini</h2>
-          <div className="people-card">
-            {alumini.map((data) => {
-              return (
-                <div className="people-card-div">
-                  <div className="people-card-div-left">
-                    <img src={data.img} alt="people" />
-                    <h2>{data.name}</h2>
-                    <Link to={data.link}>
-                      <FaLinkedinIn />
-                    </Link>
+          <div className="p-4">
+            <h2>Alumini</h2>
+            <div className="people-card">
+              {alumini.map((data) => {
+                return (
+                  <div className="people-card-div">
+                    <div className="people-card-div-left">
+                      <img src={data.img} alt="people" />
+                      <h2>{data.name}</h2>
+                      <Link to={data.link}>
+                        <FaLinkedinIn />
+                      </Link>
+                    </div>
+                    <div className="people-card-div-right">
+                      <p>{data.desc}</p>
+                    </div>
                   </div>
-                  <div className="people-card-div-right">
-                    <p>{data.desc}</p>
-                  </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
           <div className="p-4">
             <h2>Intern</h2>
