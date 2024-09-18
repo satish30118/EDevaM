@@ -4,6 +4,8 @@ import about from "../Images/about.png";
 import { Link } from "react-router-dom";
 import carbon from "../Images/res.jpg";
 import Gallery from "../../Components/Gallery/gallery";
+// import himg from "./Teams.webp";
+import HomeCarousel from "../Carousel/Carousel";
 
 const res = [
   {
@@ -23,23 +25,11 @@ function Home() {
     <>
       <h1 className="home-1-h1">Energy Devices and Multiphysics Laboratory</h1>
       <div className="home">
-        <div className="home-1">
-          <div className="home-1-1">
-            {/* <h1 className="home-1-h1">E-DevaM</h1> */}
-            {/* <p>
-            The advanced rechargeable battery industry in Europe has created job
-            opportunities for hundreds of thousands people, from engineering and
-            battery manufacturing, to mining and production, to RD&I and waste
-            treatment.
-            </p> */}
-          </div>
-          <Link to="/research" style={{position:"absolute",bottom:"20px" }}> 
-            <button className="btn">Read More...</button>
-          </Link>
+        <div>
+          <HomeCarousel />
         </div>
         <div className="home-2">
           <h2>About Us</h2>
-          <br></br>
           <div className="home-2-1">
             <div className="home-2-left">
               <p>
@@ -61,30 +51,22 @@ function Home() {
                 excellence, we aim to lead the charge in shaping a cleaner,
                 greener future for generations to come.
               </p>
-              {/* <Link to="/about">
+
+              <Link
+                to="/research"
+                style={{ position: "absolute", bottom: "-30px" }}
+              >
                 <button className="btn">Read More...</button>
-              </Link> */}
+              </Link>
             </div>
-            <img src={carbon} alt="" />
+            <div>
+              <img src={carbon} alt="" />
+            </div>
           </div>
         </div>
         <div className="home-3">
           <h2>Gallery </h2>
-          {/* <div className="home-3-card">
-            {res.map((data) => {
-              return (
-                <div className="about-card">
-                  <img src={data.img} alt="" />
-                  <h2>{data.title}</h2>
-                  <p>{data.desc}</p>
-                </div>
-              );
-            })}
-            
-          </div> */}
-          {/* <div className="gall"> */}
           <Gallery />
-          {/* </div> */}
         </div>
         <div className="home-4">
           <div className="news-sec">

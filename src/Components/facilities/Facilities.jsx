@@ -77,7 +77,7 @@ const Facilities = () => {
   return (
     <>
       <h1 style={{textAlign:"center", color:"darkblue"}}>Our Facilities</h1>
-      <div className="s-bottom">
+      <div className="s-bottom" >
         {facility.map((data) => {
           return (
             <div className="s-b-1" style={{ width: "auto" }}>

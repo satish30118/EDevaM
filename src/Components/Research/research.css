@@ -221,11 +221,14 @@
   }
 }
 @media only screen and (max-width: 600px) {
+  .res{
+    padding: 20px;
+  }
   .s-b-1 {
-    width: 60vw;
+    width: 90vw;
   }
   .s-bottom img {
-    width: 60vw;
+    width: 80vw;
   }
   .s-top h1 {
     font-size: 35px;

@@ -3,7 +3,7 @@
     flex-direction: column;
     /* align-items: center; */
     justify-content: center;
-    background-image: url(Teams.webp);
+    /* background-image: url(Teams.webp); */
     visibility: 0.3;
     backface-visibility: 0.3;
     background-repeat: no-repeat;
@@ -16,6 +16,12 @@
     /* height: 90vh; */
     /* filter: blur(0.5px); */
     margin-top: 0;
+}
+
+.h-img {
+    width: 100%;
+    /* height: 100vh; */
+    z-index: -200;
 }
 
 .home-1 {
@@ -59,9 +65,11 @@
     /* background-color: rgb(9, 231, 216); */
     margin: 0;
     /* color: rgb(250, 248, 248); */
-    background-image: url("../../asset/h-top-bg.jpg");
+    /* background-image: url("../../asset/h-top-bg.jpg"); */
+    background-color: rgb(172, 230, 114);
     /* background-size:100% 100%; */
     background-repeat: no-repeat;
+    color: black;
 }
 
 .home-1 p {
@@ -86,13 +94,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    /* border: 3px solid  red; */
+    padding: 20px;
 }
 
 .home-2-left {
+    position: relative;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     width: 60vw;
-    gap: 10vh;
+    /* gap: 10vh; */
 }
 
 .home-2-left h2 {
@@ -107,18 +119,19 @@
 .home-2-left p {
     font-family: 'IBM Plex Sans KR';
     font-style: normal;
+    color: #21211f;
     font-weight: 500;
-    font-size: 19.2026px;
-    line-height: 29px;
+    font-size: 22px;
+    line-height: 32px;
     letter-spacing: 0.01em;
-
+    text-wrap: wrap;
+    text-align: justify;
+    padding: 10px 20px 10px 10px;
 }
 
 .home-2 img {
-    width: 25vw;
+    /* width: 25vw; */
     height: 25vw;
-    margin-bottom: 10vw;
-    margin-left: 3vw;
 }
 
 .home-3 {
@@ -151,29 +164,6 @@
     line-height: 40px;
 }
 
-.home-3-card {
-    display: flex;
-    gap: 50px;
-}
-
-.home-3-card h2 {
-    font-family: 'IBM Plex Sans KR';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: 0.01em;
-}
-
-.home-3-card p {
-    font-family: 'IBM Plex Sans KR';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: 0.01em;
-}
-
 .about-card {
     display: flex;
     flex-direction: column;
@@ -187,7 +177,7 @@
 }
 
 .btn {
-    width: 12vw;
+    width: 150px;
     background-color: #175B9F;
     border: 1px solid #175B9F;
     color: white;
@@ -219,24 +209,35 @@
     letter-spacing: 0.01em;
 }
 
-@media only screen and (max-width:900px) {
-    .btn {
-        width: 17vw;
-    }
-
-    .home-2 img {
-        width: 250px;
-        height: 250px;
+@media (max-width: 768px) {
+    .home {
+        background-size: contain;
+        background-position: center;
     }
 }
 
-@media only screen and (max-width:750px) {
-    .home-3-card {
-        flex-direction: column;
+@media only screen and (max-width:1000px) {
+    .home-2-left {
+        width: 100%;
     }
 
-    .about-card img {
-        width: 30vw;
+    .home-2 img {
+        width: 80vw;
+        height: 350px;
+    }
+
+    .home-2-left p {
+        font-size: 18px;
+    }
+
+    .home-3 {
+        padding: 50px 30px;
+    }
+
+    .home-2-1 {
+        flex-direction: column-reverse;
+        gap: 5vh;
+        padding: 10px;
     }
 }
 
@@ -251,100 +252,12 @@
         padding: 50px 10px;
     }
 
-    .home-3 {
-        padding: 50px 30px;
+    .home-4 {
+        padding: 50px 20px;
     }
-
-    .home-2-1 {
-        flex-direction: column-reverse;
-        gap: 5vh;
-    }
-}
-
-@media only screen and (max-width:650px) {
     .home-2 img {
-        width: 230px;
-        height: 270px;
+        width: 80vw;
+        height: 250px;
     }
 
-    .home-3-card h2 {
-        font-size: 19px;
-    }
-}
-
-@media only screen and (max-width:600px) {
-    .home-1 {
-        gap: 30vh;
-        width: 85vw;
-    }
-
-    .home-1 h1 {
-        font-size: 30px;
-        font-weight: 600;
-        line-height: 4vh;
-    }
-
-    .home-1 p {
-        font-size: 18px;
-        font-weight: 400;
-    }
-
-    .home-2 {
-        gap: 5vh;
-    }
-
-    .home-2-1 {
-        flex-direction: column-reverse;
-        gap: 5vh;
-    }
-
-    .home-3 h2 {
-        font-size: 35px;
-    }
-
-    .home-3-card h2 {
-        font-size: 19px;
-    }
-
-    .btn {
-        width: 30vw;
-    }
-}
-
-@media only screen and (max-width:450px) {
-    .home-2 img {
-        width: 220px;
-        height: 270px;
-    }
-
-    .btn {
-        font-size: 13px;
-        width: 35vw;
-    }
-
-    .home-3 h2 {
-        font-size: 32px;
-    }
-
-    .home-2-left p {
-        font-size: 15px;
-    }
-
-    .home-3-card h2 {
-        font-size: 16px;
-    }
-
-    .home-3-card p {
-        font-size: 14px;
-    }
-}
-
-@media only screen and (max-width:380px) {
-    .home-3-card h2 {
-        font-size: 14px;
-    }
-
-    .home-3-card p {
-        font-size: 11px;
-    }
 }

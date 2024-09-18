@@ -10,6 +10,7 @@ import Gallery from './Components/Gallery/gallery'
 import { BrowserRouter as Router, Routes,Route } from 'react-router-dom'
 import Publications from './Components/publication/Publications'
 import Facilities from './Components/facilities/Facilities'
+import "./App.css"
 
 function App() {
   return (

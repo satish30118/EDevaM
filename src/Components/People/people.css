@@ -96,7 +96,23 @@
   border-bottom-right-radius: 0;
 }
 
+.people-btn {
+  /* border: 2px solid blue; */
+}
+
+.people-btn button {
+  padding: 6px 30px;
+  cursor: pointer;
+  border: 2px solid blue;
+  border-radius: 10px;
+  margin: 0 20px;
+  font-weight: 600;
+  font-size: 22px;
+}
 @media only screen and (max-width: 950px) {
+  .people-card-div {
+    width: 80vw;
+  }
   .people-card-div-left h2 {
     font-size: 20px;
   }
@@ -107,6 +123,9 @@
 }
 
 @media only screen and (max-width: 800px) {
+  .people-card-div {
+    width: 85vw;
+  }
   .people-card-div-left h2 {
     font-size: 17px;
   }
@@ -117,6 +136,13 @@
 }
 
 @media only screen and (max-width: 700px) {
+  .people-card-div {
+    width: 75vw;
+    padding: 20px;
+  }
+  .people{
+    padding: 50px 20px;
+  }
   .people-card-div {
     flex-direction: column;
   }
@@ -144,12 +170,29 @@
 }
 
 @media only screen and (max-width: 550px) {
+  .people-card-div {
+    width: 85vw;
+  }
+  .people-card-div-left {
+    width: 93%;
+  }
+  .people-card-div-left  img{
+    width: 100%;
+  }
   .people h1 {
     font-size: 30px;
+  }
+  .people-btn button{
+    font-size: 15px;
+    padding: 6px 15px;
+    margin: 0 10px;
   }
 }
 
 @media only screen and (max-width: 460px) {
+  .people-card-div {
+    width: 90vw;
+  }
   .people h1 {
     font-size: 27px;
   }
@@ -184,16 +227,3 @@
 }
 
 
-.people-btn {
-  /* border: 2px solid blue; */
-}
-
-.people-btn button {
-  padding: 6px 30px;
-  cursor: pointer;
-  border: 2px solid blue;
-  border-radius: 10px;
-  margin: 0 20px;
-  font-weight: 600;
-  font-size: 22px;
-}

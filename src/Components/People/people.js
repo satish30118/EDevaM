@@ -10,6 +10,8 @@ import dinesh from "./img/Dinesh.jpg";
 import uttam from "./img/Uttam.png";
 import yash from "./img/Yash.png";
 import prerak from "./img/Prerak.png";
+import sahil from "./img/Sahil.jpeg";
+
 
 const postdoc = [
   {
@@ -50,13 +52,19 @@ const phd = [
 ];
 const mtech = [
   {
+    img: sahil,
+    name:"Sahil Yadav",
+    link:`https://www.linkedin.com/in/sahil-yadav-741275194/`,
+    desc:`My name is Sahil Yadav, and I hold an undergraduate degree in Chemical Engineering. I am currently pursuing a Master's degree in Chemical Engineering at IIT Roorkee. During my undergraduate studies, I worked on a project focused on the "Extraction of Silica from Rice Husk", where I gained valuable research experience. Presently, I am working on the modeling and simulation of lithium-ion batteries. My research involves formulating and analyzing mathematical models to investigate the thermal behavior of lithium-ion batteries, particularly during thermal runaway, to advance battery safety and performance.`
+  }
+];
+const intern = [
+  {
     img: uttam,
     name: "Uttam Gupta",
     link: "https://www.linkedin.com/in/uttam-gupta-3025421a8?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BsW0J6UAxS%2FaaiMXp",
     desc: `Uttam gupta here, I have completed my undergraduate degree in chemical engineering, and I’m pursuing my master's degree in chemical engineering from IIT Roorkee. I worked on a project involving Composites of Commercial Value from Solid Waste Recycled Material throughout my undergraduate studies. And I'm currently working on the modeling and simulation of lithium-ion batteries under the supervision of Dr. Ashwini Kumar Sharma. I have a keen interest in lithium-ion batteries. In this project, I formulate and analyze mathematical models for lithium-ion batteries.`,
   },
-];
-const intern = [
   {
     img: yash,
     name: "Yash Sharma",
