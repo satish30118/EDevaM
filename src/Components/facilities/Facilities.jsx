@@ -14,13 +14,13 @@ const Facilities = () => {
   const facility = [
     {
       id: 0,
-      topic: "Neware battery Cycle",
+      topic: "Neware battery Cycler",
       img: img10,
       dec: "",
     },
     {
       id: 1,
-      topic: "Abrin Battery Cycle",
+      topic: "Arbin Battery Cycler",
       img: img1,
       dec: "",
     },
@@ -89,7 +89,7 @@ const Facilities = () => {
                 }}
               >
                 <img src={data.img} alt="research" />
-                <div style={{fontWeight:"600",fontSize:"25px"}}>{data.topic}</div>
+                <div style={{fontWeight:"600",fontSize:"25px", textTransform:"capitalize"}} >{data.topic}</div>
               </div>
             </div>
           );

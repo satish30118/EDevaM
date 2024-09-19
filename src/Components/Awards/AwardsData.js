@@ -1,8 +1,5 @@
 const AwardsData = [
   {
-    title: `Congratulations to Uttam Gupta, Subham Khange, and Vinod Kumar for winning 1st place in the idea competition at SynergiA, CTRANS Industry-Academia Meet at IIT Roorkee, on February 16-17, 2023. Their poster, titled "Solar Power-Based Wireless On-Road Charging for Electric Vehicles," won a prize of ₹10,000.`,
-  },
-  {
     title: `Congratulations to Uttam Gupta, Ashwini Kumar Sharma for Best poster presentation on Research Scholors Day,	Chemical Engineering Department, IIT Roorkee, on 8th October 2023. Their poster, titled "Electrochemical modeling of aging in Lithium-ion batteries".`,
   },
 
@@ -16,10 +13,6 @@ const AwardsData = [
   },
   {
     title: `Congratulations to Subham khange, Vinod kumar, Poonam Rani, Abhishek Dharmesh for Finalist at Centre for Safety Engineering (CSE), IIT Gandhinagar, Indi, on September 26, 2022. Their poster, titled "Engineering Challenges in EV Safety - Stage 1".	
-    `,
-  },
-  {
-    title: `Congratulations to Subham khange, Vinod Kumar, Uttam Gupta for winning 1st place in the idea competition at	SynergiA CTRANS industry-Academia Meet 	Center for Transportation Systems, IIT Roorkee, on	16-17 February 2023.  Their poster, titled 	"Solar power-based wireless on-road charging for electric vehicles" won a price of ₹10,000.	
     `,
   },
   {
