@@ -1,0 +1,35 @@
+# Node.js dependencies
+/node_modules/
+
+# Environment variables
+.env
+
+# Logs
+*.log
+logs
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Build output
+/dist
+/build
+/public
+
+# Temporary files
+*.tmp
+*.temp
+
+# IDE and editor settings
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Coverage directory used by tools like istanbul
+/coverage
+
+# Database files (if any)
+*.sqlite
+*.db
