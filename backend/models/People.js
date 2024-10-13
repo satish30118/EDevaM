@@ -23,10 +23,6 @@ const peopleSchema = new mongoose.Schema({
     enum: ['PostDoc', 'PhD','BTech', 'MTech', 'Intern', 'Other'], // Add more options as needed
     required: true,
   },
-  socialMediaLinks: {
-    type: Map,
-    of: String, // Allows multiple social media links
-  }
 }, { timestamps: true });
 
 module.exports = mongoose.model('People', peopleSchema);

@@ -122,10 +122,11 @@ const AwardsPage = () => {
         </thead>
         <tbody>
           {awardList.map((award) => (
-            <tr key={award.id} className="hover:bg-gray-50 border-b">
+            <tr key={award._id} className="hover:bg-gray-50 border-b">
               <td className="p-4 font-semibold">{award.content}</td>
               <td className="p-4 w-10 font-bold">{award.year}</td>
-              <td className="p-4 w-24 flex justify-center h-full space-x-4">
+              <td className="p-4 w-24 ">
+                <div className="flex justify-center h-full space-x-4">
                 <FaEdit
                   className="text-blue-500 cursor-pointer"
                   onClick={() => handleUpdateAward(award._id)}
@@ -135,7 +136,7 @@ const AwardsPage = () => {
                   className="text-red-500 cursor-pointer"
                   onClick={() => handleDeleteClick(award._id)}
                   title="Delete award"
-                />
+                /></div>
               </td>
             </tr>
           ))}

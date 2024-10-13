@@ -124,7 +124,8 @@ const PublicationPage = () => {
             <tr key={publication.id} className="hover:bg-gray-50 border-b">
               <td className="p-4 font-semibold">{publication.content}</td>
               <td className="p-4 w-10 font-bold">{publication.year}</td>
-              <td className="p-4 w-24 flex justify-center h-full space-x-4">
+              <td className="p-4 w-24 ">
+              <div className="flex justify-center h-full space-x-4">
                 <FaEdit
                   className="text-blue-500 cursor-pointer"
                   onClick={() => handleUpdatePublication(publication._id)}
@@ -134,8 +135,9 @@ const PublicationPage = () => {
                   className="text-red-500 cursor-pointer"
                   onClick={() => handleDeleteClick(publication._id)}
                   title="Delete publication"
-                />
+                /></div>
               </td>
+            
             </tr>
           ))}
         </tbody>

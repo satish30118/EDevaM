@@ -24,6 +24,31 @@ exports.addPerson = async (req, res) => {
   }
 };
 
+// Update a person by ID
+exports.updatePerson = async (req, res) => {
+  const { name, about,position,alumni, socialMediaLinks } = req.body;
+   // Convert the image file to a buffer
+   const imgBuffer = req.file ? req.file.buffer : await People.findById( req.params.id).img
+   console.log(req.file)
+
+  try {
+    const updatedPerson = await People.findByIdAndUpdate(
+      req.params.id,
+      { name, img:imgBuffer, about, position, socialMediaLinks, alumni},
+      { new: true } // Return the updated document
+    );
+
+    if (!updatedPerson) {
+      return res.status(404).json({ message: 'Person not found' });
+    }
+
+    res.status(200).json({ message: 'Person updated successfully', updatedPerson });
+  } catch (error) {
+    res.status(500).json({ message: 'Error updating person', error });
+  }
+};
+
+
 // Get all people
 exports.getAllPeople = async (req, res) => {
   try {
@@ -49,26 +74,6 @@ exports.getSinglePerson = async (req, res) => {
   }
 };
 
-// Update a person by ID
-exports.updatePerson = async (req, res) => {
-  const { name, img, about, alumni, position, socialMediaLinks } = req.body;
-
-  try {
-    const updatedPerson = await People.findByIdAndUpdate(
-      req.params.id,
-      { name, img, about, alumni, position, socialMediaLinks },
-      { new: true } // Return the updated document
-    );
-
-    if (!updatedPerson) {
-      return res.status(404).json({ message: 'Person not found' });
-    }
-
-    res.status(200).json({ message: 'Person updated successfully', updatedPerson });
-  } catch (error) {
-    res.status(500).json({ message: 'Error updating person', error });
-  }
-};
 
 // Delete a person by ID
 exports.deletePerson = async (req, res) => {
@@ -101,8 +106,13 @@ exports.getPeopleByCriteria = async (req, res) => {
       }
   
       const people = await People.find(filter);
-      res.status(200).json(people);
+      const membersWithImages = people.map(member => ({
+        ...member._doc,
+        img: member.img && member.img.toString('base64'), // Convert buffer to base64 string
+      }));
+      res.status(200).json(membersWithImages);
     } catch (error) {
+      console.log(error)
       res.status(500).json({ message: 'Error fetching people', error });
     }
   };

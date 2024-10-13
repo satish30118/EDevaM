@@ -125,7 +125,8 @@ const NewsPage = () => {
                 <strong>{news.title}</strong>
                 <p>{news.content}</p>
               </td>
-              <td className="p-4 flex space-x-4">
+              <td className="p-4 w-24">
+              <div className="flex justify-center h-full space-x-4">
                 {/* Update and Delete Icons */}
                 <FaEdit
                   className="text-blue-500 cursor-pointer"
@@ -137,6 +138,7 @@ const NewsPage = () => {
                   onClick={() => handleDeleteClick(news._id)}
                   title="Delete news"
                 />
+                </div>
               </td>
             </tr>
           ))}
