@@ -1,16 +1,21 @@
 const Slider = require('../../models/home/Slider');
+const fs = require("fs");
 
 // Upload a slider image
 exports.uploadSliderImage = async (req, res) => {
   try {
     const { title, description } = req.body;
-    const imageData = req.file.buffer; // Get the binary data from the uploaded file
-    const contentType = req.file.mimetype; // Get the MIME type
+    const { image } = req.files;
 
-    const newSliderImage = new Slider({ title, description, imageData, contentType });
+    const newSliderImage = new Slider({ title, description });
+    if (image) {
+      newSliderImage.imageData = fs.readFileSync(image.path);
+      newSliderImage.contentType = image.type;
+    }
     await newSliderImage.save();
     res.status(201).json({ message: 'Slider image uploaded successfully', newSliderImage });
   } catch (error) {
+    console.log(error)
     res.status(500).json({ message: 'Error uploading slider image', error });
   }
 };

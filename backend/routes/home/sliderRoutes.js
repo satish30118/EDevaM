@@ -1,5 +1,6 @@
 const express = require('express');
 const multer = require('multer');
+const formidable = require("express-formidable")
 const { uploadSliderImage, getSliderImages, getSliderImage, deleteSliderImage } = require('../../controllers/home/sliderController');
 
 const router = express.Router();
@@ -9,7 +10,7 @@ const storage = multer.memoryStorage(); // Store files in memory
 const upload = multer({ storage });
 
 // Routes
-router.post('/', upload.single('image'), uploadSliderImage); // Upload a slider image
+router.post('/', formidable(), uploadSliderImage); // Upload a slider image
 router.get('/', getSliderImages);                             // Get all slider images
 router.get('/:id', getSliderImage);                           // Get a specific slider image by ID
 router.delete('/:id', deleteSliderImage);                     // Delete a specific slider image by ID

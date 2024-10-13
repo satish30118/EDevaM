@@ -3,7 +3,7 @@ const News = require('../../models/home/News');
 // Get all news articles
 exports.getAllNews = async (req, res) => {
   try {
-    const newsArticles = await News.find();
+    const newsArticles = await News.find().sort({createdAt:-1});
     res.status(200).json(newsArticles);
   } catch (error) {
     res.status(500).json({ message: 'Error fetching news articles', error });
@@ -24,6 +24,16 @@ exports.addNews = async (req, res) => {
     res.status(201).json({ message: 'News article added successfully', savedArticle });
   } catch (error) {
     res.status(500).json({ message: 'Error adding news article', error });
+  }
+};
+
+// Get all news articles
+exports.getSingleNews = async (req, res) => {
+  try {
+    const newsArticles = await News.findById(req.params.id,);
+    res.status(200).json(newsArticles);
+  } catch (error) {
+    res.status(500).json({ message: 'Error fetching news articles', error });
   }
 };
 
