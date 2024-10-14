@@ -120,7 +120,7 @@ const MemberPage = () => {
           type="file"
           accept="image/*"
           onChange={(e) => setMemberImg(e.target.files[0])}
-          className="border rounded mb-2 p-2 "
+          className="border rounded mb-2 p-2 text-white"
         />
         <button
           onClick={handleAddMember}

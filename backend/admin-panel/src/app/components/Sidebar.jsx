@@ -39,12 +39,13 @@ const Sidebar = () => {
         <div className='pl-2 py-3'>
           <div className='pb-2 text-red-300'>Peoples Page</div>
           <ul>
+          <li className={`mb-1 mr-2 hover:bg-gray-950 ${activeTab === 'current-member' ? 'bg-gray-950' : ''}`} onClick={() => handleSetActiveTab('current-member')}>
+              <Link href="/admin/peoples/current-member" className="block px-6 py-3">Members</Link>
+            </li>
             <li className={`mb-1 mr-2 hover:bg-gray-950 ${activeTab === 'alumni' ? 'bg-gray-950' : ''}`} onClick={() => handleSetActiveTab('alumni')}>
               <Link href="/admin/peoples/alumni" className="block px-6 py-3">Alumni</Link>
             </li>
-            <li className={`mb-1 mr-2 hover:bg-gray-950 ${activeTab === 'current-member' ? 'bg-gray-950' : ''}`} onClick={() => handleSetActiveTab('current-member')}>
-              <Link href="/admin/peoples/current-member" className="block px-6 py-3">Current Member</Link>
-            </li>
+           
           </ul>
         </div>
         <div className='pl-2 py-3'>

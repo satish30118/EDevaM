@@ -5,10 +5,6 @@ const gallerySchema = new mongoose.Schema({
     type: Buffer,
     required: true,
   },
-  contentType: {
-    type: String,
-    required: true,
-  }
 }, { timestamps: true });
 
 module.exports = mongoose.model('Gallery', gallerySchema);

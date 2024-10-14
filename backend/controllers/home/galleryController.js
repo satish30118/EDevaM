@@ -4,37 +4,30 @@ const Gallery = require('../../models/home/Gallery');
 
 // Upload a gallery image
 exports.uploadGalleryImage = async (req, res) => {
-  const form = new formidable.IncomingForm();
+  try {
+ 
+  // Convert the image file to a buffer
+  const imgBuffer = req.file ? req.file.buffer : null;
 
-  form.parse(req, async (err, fields, files) => {
-    if (err) {
-      return res.status(500).json({ message: 'Error parsing the file', error: err });
-    }
-
-    const imageFile = files.image; // The uploaded file
-
-    // Read the file
-    fs.readFile(imageFile.filepath, async (err, data) => {
-      if (err) {
-        return res.status(500).json({ message: 'Error reading file', error: err });
-      }
-
-      const newGalleryImage = new Gallery({
-        imageData: data, // Store the binary data
-        contentType: imageFile.mimetype // Store the MIME type
-      });
-
-      await newGalleryImage.save();
-      res.status(201).json({ message: 'Gallery image uploaded successfully', newGalleryImage });
-    });
-  });
+    const newGalleryImage = new Gallery({imageData:imgBuffer });
+    await newGalleryImage.save();
+    res.status(201).json({ message: 'Gallery image uploaded successfully', newGalleryImage });
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ message: 'Error uploading slider image', error });
+  }
 };
 
 // Retrieve all gallery images
 exports.getGalleryImages = async (req, res) => {
   try {
     const galleries = await Gallery.find();
-    res.status(200).json(galleries);
+
+    const galleriesWithImages = galleries.map(img => ({
+      ...img._doc,
+      imageData: img.imageData && img.imageData.toString('base64'), // Convert buffer to base64 string
+    }));
+    res.status(200).json(galleriesWithImages);
   } catch (error) {
     res.status(500).json({ message: 'Error fetching gallery images', error });
   }

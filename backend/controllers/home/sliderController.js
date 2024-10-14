@@ -5,13 +5,11 @@ const fs = require("fs");
 exports.uploadSliderImage = async (req, res) => {
   try {
     const { title, description } = req.body;
-    const { image } = req.files;
+  
+  // Convert the image file to a buffer
+  const imgBuffer = req.file ? req.file.buffer : null;
 
-    const newSliderImage = new Slider({ title, description });
-    if (image) {
-      newSliderImage.imageData = fs.readFileSync(image.path);
-      newSliderImage.contentType = image.type;
-    }
+    const newSliderImage = new Slider({ title, description,imageData:imgBuffer });
     await newSliderImage.save();
     res.status(201).json({ message: 'Slider image uploaded successfully', newSliderImage });
   } catch (error) {
@@ -24,7 +22,11 @@ exports.uploadSliderImage = async (req, res) => {
 exports.getSliderImages = async (req, res) => {
   try {
     const sliders = await Slider.find();
-    res.status(200).json(sliders);
+    const slidersWithImages = sliders.map(img => ({
+      ...img._doc,
+      imageData: img.imageData && img.imageData.toString('base64'), // Convert buffer to base64 string
+    }));
+    res.status(200).json(slidersWithImages);
   } catch (error) {
     res.status(500).json({ message: 'Error fetching slider images', error });
   }

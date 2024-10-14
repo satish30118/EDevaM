@@ -1,7 +1,6 @@
 // app/layout.jsx
 import './globals.css';
-import Navbar from './components/Navbar';
-import Sidebar from './components/Sidebar';
+import { AuthProvider } from './context/AuthContext';
 
 export const metadata = {
   title: 'Admin Panel',
@@ -12,7 +11,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-      {children}
+      <AuthProvider>
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );

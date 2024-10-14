@@ -6,14 +6,15 @@ const {
   getSingleNews
 } = require('../../controllers/home/newsController');
 const { getAllNews } = require('../../controllers/home/newsController');
+const adminAuth = require('../../middlewares/authMiddleware');
 
 const router = express.Router();
 
 // Routes
-router.get('/', getAllNews);          // Get all news articles
-router.post('/', addNews);             // Add a new news article
-router.get('/:id', getSingleNews);          // Get single news articles
-router.put('/:id', updateNews);        // Update a news article by ID
-router.delete('/:id', deleteNews);     // Delete a news article by ID
+router.get('/', adminAuth,  getAllNews);          // Get all news articles
+router.post('/', adminAuth, addNews);             // Add a new news article
+router.get('/:id',adminAuth,  getSingleNews);          // Get single news articles
+router.put('/:id', adminAuth, updateNews);        // Update a news article by ID
+router.delete('/:id',adminAuth,  deleteNews);     // Delete a news article by ID
 
 module.exports = router;
