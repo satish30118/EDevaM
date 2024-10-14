@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { FaTrashAlt } from 'react-icons/fa';
+import { FaImages, FaTrashAlt, FaUpload } from 'react-icons/fa';
 import { ToastContainer, toast } from 'react-toastify'; // Import ToastContainer and toast
 import 'react-toastify/dist/ReactToastify.css'; // Import CSS for toast notifications
 
@@ -59,21 +59,25 @@ const SliderPage = () => {
   };
 
   return (
-    <div className="p-4">
-      <ToastContainer /> {/* Include ToastContainer to render the toasts */}
-      <h2 className="text-2xl font-bold mb-4 text-white text-center">Slider Management</h2>
-      <form onSubmit={handleAddImage} className="m-4">
-        <input
-          type="file"
-          accept="image/*"
-          onChange={handleFileChange}
-          className="border rounded p-2 mb-2 text-white"
-          required
-        />
-        <button type="submit" className="bg-blue-500 ml-4 text-white rounded p-2 px-4">
-          Upload New Image
-        </button>
-      </form>
+    <div className="p-4 bg-gray-800 rounded-lg shadow-lg">
+    <ToastContainer />
+    <h2 className="text-3xl font-bold mb-6 text-white text-center">
+      <FaImages className="inline-block mr-2" />
+      Slider Management
+    </h2>
+    <form onSubmit={handleAddImage} className="m-4 flex items-center">
+      <input
+        type="file"
+        accept="image/*"
+        onChange={handleFileChange}
+        className="border rounded p-2 mb-2 text-white bg-gray-700"
+        required
+      />
+      <button type="submit" className="bg-blue-600 ml-4 text-white rounded p-2 px-4 hover:bg-blue-700 transition duration-200 flex items-center">
+        <FaUpload className="mr-2" /> Upload New Image
+      </button>
+    </form>
+
 
       <table className="min-w-full bg-white border border-gray-200">
         <thead>

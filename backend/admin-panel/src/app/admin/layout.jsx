@@ -11,12 +11,16 @@ export default function RootLayout({ children }) {
   axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_URL;
   return (
     <html lang="en">
-      <body>
-        <Navbar />
+      <body className='h-screen'>
         <div className="flex">
+          <div className='h-screen overflow-y-auto hide-scrollbar'>
           <Sidebar />
-          <main className="flex-1 p-4 bg-gray-600 h-screen overflow-y-auto hide-scrollbar">
-            {children}
+          </div>
+          <main className="flex-1 bg-gray-800 h-screen overflow-y-auto hide-scrollbar">
+            <div className='sticky top-0'><Navbar/></div>
+            
+            <div className="p-4">{children}</div>
+            
           </main>
         </div>
       </body>

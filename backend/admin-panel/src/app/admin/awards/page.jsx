@@ -83,7 +83,7 @@ const AwardsPage = () => {
   };
 
   return (
-    <div className="px-3">
+    <div className="p-5 bg-gray-900">
       <ToastContainer />
       
       <h1 className="text-2xl font-bold text-center mb-4 text-white">Award Management</h1>

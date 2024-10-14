@@ -14,10 +14,12 @@ const AlumniPage = () => {
   const [deleteId, setDeleteId] = useState(null);
   const router = useRouter();
 
+  // Fetch alumni list on component mount
   useEffect(() => {
     fetchAlumni();
   }, []);
 
+  // Fetch alumni data from the API
   const fetchAlumni = async () => {
     try {
       const response = await axios.get("/api/people/?alumni=true");
@@ -28,10 +30,12 @@ const AlumniPage = () => {
     }
   };
 
+  // Handle the click event to initiate deletion
   const handleDeleteClick = (id) => {
     setDeleteId(id);
   };
 
+  // Confirm and execute the deletion of an alumni member
   const confirmDeleteAlumni = async () => {
     if (!deleteId) return;
 
@@ -46,6 +50,7 @@ const AlumniPage = () => {
     }
   };
 
+  // Navigate to the update page for an alumni member
   const handleUpdateAlumni = (id) => {
     router.push(`/admin/peoples/alumni/update/${id}`);
   };
@@ -53,7 +58,6 @@ const AlumniPage = () => {
   return (
     <div className="px-3">
       <ToastContainer />
-
       <h1 className="text-2xl font-bold text-center mb-4 text-white">Alumni Management</h1>
 
       {/* Alumni List Table */}
@@ -78,7 +82,7 @@ const AlumniPage = () => {
               </td>
               <td className="p-4 font-semibold">{alumni.name}</td>
               <td className="p-4 font-bold">{alumni.position}</td>
-              <td className="p-4 w-24 ">
+              <td className="p-4 w-24">
                 <div className="flex justify-center h-full space-x-4">
                   <FaEdit
                     className="text-blue-500 cursor-pointer"

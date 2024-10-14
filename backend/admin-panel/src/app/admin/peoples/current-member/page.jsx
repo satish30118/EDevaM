@@ -83,7 +83,7 @@ const MemberPage = () => {
   };
 
   return (
-    <div className="px-3">
+    <div className="p-3 bg-gray-900 min-h-screen">
       <ToastContainer />
 
       <h1 className="text-2xl font-bold text-center mb-4 text-white">Lab Members Management</h1>
@@ -95,12 +95,12 @@ const MemberPage = () => {
           placeholder="Member Name"
           value={memberName}
           onChange={(e) => setMemberName(e.target.value)}
-          className="border rounded px-4 py-2 w-full outline-none mb-2"
+          className="border rounded px-4 py-2 w-full outline-none mb-2 bg-gray-800 text-white"
         />
         <select
           value={memberPosition}
           onChange={(e) => setMemberPosition(e.target.value)}
-          className="border rounded px-4 py-2 w-full mb-2"
+          className="border rounded px-4 py-2 w-full mb-2 bg-gray-800 text-white"
         >
           <option value="">--- Select Position ---</option>
           <option value="PostDoc">PostDoc</option>
@@ -114,56 +114,57 @@ const MemberPage = () => {
           placeholder="About"
           value={memberAbout}
           onChange={(e) => setMemberAbout(e.target.value)}
-          className="border rounded px-4 py-2 w-full outline-none h-32 mb-2"
+          className="border rounded px-4 py-2 w-full outline-none h-32 mb-2 bg-gray-800 text-white"
         />
         <input
           type="file"
           accept="image/*"
           onChange={(e) => setMemberImg(e.target.files[0])}
-          className="border rounded mb-2 p-2 text-white"
+          className="border rounded mb-2 p-2 bg-gray-800 text-white"
         />
         <button
           onClick={handleAddMember}
-          className="bg-blue-500 text-white px-8 py-2 rounded mx-4 hover:bg-blue-600"
+          className="bg-blue-600 text-white px-8 py-2 rounded mx-4 hover:bg-blue-700 transition-colors"
         >
           Add Member
         </button>
       </div>
 
       {/* Member List Table */}
-      <table className="min-w-full bg-white border border-gray-200">
+      <table className="min-w-full bg-gray-800 border border-gray-700">
         <thead>
-          <tr className="bg-gray-100 text-left">
-          <th className="p-4 border-b">Image</th>
-            <th className="p-4 border-b">Name</th>
-            <th className="p-4 border-b">Position</th>
-            <th className="p-4 border-b">Action</th>
+          <tr className="bg-gray-700 text-left">
+            <th className="p-4 border-b text-white">Image</th>
+            <th className="p-4 border-b text-white">Name</th>
+            <th className="p-4 border-b text-white">Position</th>
+            <th className="p-4 border-b text-white">Action</th>
           </tr>
         </thead>
         <tbody>
           {memberList.map((member) => (
-            <tr key={member._id} className="hover:bg-gray-50 border-b">
-                <td className="p-4">
+            <tr key={member._id} className="hover:bg-gray-600 border-b border-gray-700">
+              <td className="p-4">
                 <img
                   src={`data:image/jpeg;base64,${member.img?.toString('base64')}`}
                   alt={member.name}
                   className="w-16 h-16 object-cover rounded-full"
                 />
               </td>
-              <td className="p-4 font-semibold">{member.name}</td>
-              <td className="p-4 font-bold">{member.position}</td>
+              <td className="p-4 font-semibold text-white">{member.name}</td>
+              <td className="p-4 font-bold text-white">{member.position}</td>
               <td className="p-4 w-24 ">
                 <div className="flex justify-center h-full space-x-4">
-                <FaEdit
-                  className="text-blue-500 cursor-pointer"
-                  onClick={() => handleUpdateMember(member._id)}
-                  title="Update member"
-                />
-                <FaTrashAlt
-                  className="text-red-500 cursor-pointer"
-                  onClick={() => handleDeleteClick(member._id)}
-                  title="Delete member"
-                /></div>
+                  <FaEdit
+                    className="text-yellow-400 cursor-pointer hover:text-yellow-500 transition-colors"
+                    onClick={() => handleUpdateMember(member._id)}
+                    title="Update member"
+                  />
+                  <FaTrashAlt
+                    className="text-red-400 cursor-pointer hover:text-red-500 transition-colors"
+                    onClick={() => handleDeleteClick(member._id)}
+                    title="Delete member"
+                  />
+                </div>
               </td>
             </tr>
           ))}
@@ -172,19 +173,19 @@ const MemberPage = () => {
 
       {/* Deletion Confirmation Popup */}
       {deleteId != null && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-          <div className="bg-white p-6 rounded shadow-md text-center">
-            <h2 className="text-xl font-bold mb-4">Are you sure?</h2>
-            <p>Do you want to delete this member?</p>
+        <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center">
+          <div className="bg-gray-800 p-6 rounded shadow-md text-center">
+            <h2 className="text-xl font-bold mb-4 text-white">Are you sure?</h2>
+            <p className="text-white">Do you want to delete this member?</p>
             <div className="mt-4 flex justify-center space-x-4">
               <button
-                className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+                className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition-colors"
                 onClick={confirmDeleteMember}
               >
                 Yes, Delete
               </button>
               <button
-                className="bg-gray-300 px-4 py-2 rounded hover:bg-gray-400"
+                className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 transition-colors"
                 onClick={() => setDeleteId(null)} // Close the modal without deleting
               >
                 Cancel
