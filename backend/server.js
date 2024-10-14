@@ -33,7 +33,9 @@ app.use('/api/awards', awardsRoutes);
 app.use('/api/people', peopleRoutes);
 
 
-
+app.use("/", (req,res)=>{
+  res.send("Edevam backend is live")
+})
 
 
 
