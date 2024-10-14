@@ -94,7 +94,7 @@ const People = () => {
             color: `${active ? "red" : "blue"}`,
           }}
         >
-          Current Member
+         Members
         </button>
         <button
           onClick={() => setActive(false)}

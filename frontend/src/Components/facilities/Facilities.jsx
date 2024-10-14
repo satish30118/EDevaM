@@ -77,10 +77,10 @@ const Facilities = () => {
   return (
     <>
       <h1 style={{textAlign:"center", color:"darkblue"}}>Our Facilities</h1>
-      <div className="s-bottom" >
+      <div className="s-bottom"  style={{display:"flex", flexDirection:"row", width:"90vw", flexWrap: "wrap"}}>
         {facility.map((data) => {
           return (
-            <div className="s-b-1" style={{ width: "auto" }} >
+            <div className="s-b-1" style={{ width: "auto", height:"400px" }} >
               <div
                 style={{
                   textAlign: "center",
@@ -88,7 +88,7 @@ const Facilities = () => {
                   width: "100%",
                 }}
               >
-                <img src={data.img} alt="research" />
+                <img src={data.img} alt="research" style={{height:"300px"}} />
                 <div style={{fontWeight:"600",fontSize:"25px", textTransform:"capitalize"}} >{data.topic}</div>
               </div>
             </div>
