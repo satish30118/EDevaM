@@ -29,7 +29,7 @@ exports.updatePerson = async (req, res) => {
   const { name, about,position,alumni, socialMediaLinks } = req.body;
    // Convert the image file to a buffer
    const imgBuffer = req.file ? req.file.buffer : await People.findById( req.params.id).img
-   console.log(req.file)
+  //  console.log(req.file)
 
   try {
     const updatedPerson = await People.findByIdAndUpdate(

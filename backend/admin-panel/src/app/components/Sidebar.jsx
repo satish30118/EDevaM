@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { FaHome, FaImage, FaNewspaper, FaBook, FaUsers, FaAward, FaGraduationCap, FaKey, FaUser, FaUserPlus } from "react-icons/fa"; // Importing new icons for user management
+import { FaHome, FaImage, FaNewspaper, FaBook, FaUsers, FaAward, FaGraduationCap, FaKey, FaUser, FaUserPlus, FaInfoCircle } from "react-icons/fa"; // Importing new icons for user management
 
 const Sidebar = () => {
   const [activeTab, setActiveTab] = useState("");
@@ -43,6 +43,14 @@ const Sidebar = () => {
             >
               <Link href="/admin/home/news" className="block px-6 py-3 flex items-center">
                 <FaNewspaper className="mr-2 text-gray-400" /> News
+              </Link>
+            </li>
+            <li
+              className={`mb-1 mr-2 hover:bg-gray-700 rounded-lg transition duration-200 ${activeTab === "about" ? "bg-gray-700" : ""}`}
+              onClick={() => handleSetActiveTab("about")}
+            >
+              <Link href="/admin/home/about" className="block px-6 py-3 flex items-center">
+                <FaInfoCircle className="mr-2 text-gray-400" /> About
               </Link>
             </li>
           </ul>
