@@ -68,10 +68,11 @@ function Home() {
           <h2>Gallery </h2>
           <Gallery />
         </div>
+        <h2 className="news_head">News and Announcements</h2>
         <div className="home-4">
           <div className="news-sec">
-            <h2>News and Announcements</h2>
-            <ul>
+            
+            <ul >
               <li>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam,
                 debitis.

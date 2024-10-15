@@ -261,3 +261,38 @@
     }
 
 }
+
+
+/* Other existing styles */
+
+.news-sec {
+    overflow: hidden; /* Hide the content that's out of bounds */
+    height: 200px; /* Set height to fit the number of visible items */
+  }
+  
+  .news-sec ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    animation: slideNews 10s linear infinite;
+  }
+  
+  .news-sec li {
+    padding: 10px 0;
+    font-size: 1.5rem;
+  }
+  
+  /* Keyframes for sliding effect */
+  @keyframes slideNews {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+
+  .news_head{
+    margin:10px auto
+  }
+  

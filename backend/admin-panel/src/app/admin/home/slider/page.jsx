@@ -59,13 +59,13 @@ const SliderPage = () => {
   };
 
   return (
-    <div className="p-4 bg-gray-800 rounded-lg shadow-lg">
+    <div className="p-3 bg-gray-800 ">
     <ToastContainer />
     <h2 className="text-3xl font-bold mb-6 text-white text-center">
       <FaImages className="inline-block mr-2" />
       Slider Management
     </h2>
-    <form onSubmit={handleAddImage} className="m-4 flex items-center">
+    <form onSubmit={handleAddImage} className="bg-gray-800 p-3 rounded-xl shadow-lg mb-6 flex items-center justify-between space-x-4">
       <input
         type="file"
         accept="image/*"
@@ -79,24 +79,24 @@ const SliderPage = () => {
     </form>
 
 
-      <table className="min-w-full bg-white border border-gray-200">
+      <table className="min-w-full bg-gray-800 border border-gray-700 shadow-xl rounded-lg">
         <thead>
-          <tr className="bg-gray-100 text-left">
-            <th className="border p-2">Image</th>
-            <th className="border p-2">Action</th>
+          <tr className="bg-gray-700 text-left">
+            <th className="p-4 border-b text-white">Image</th>
+            <th className="p-4 border-b text-white">Action</th>
           </tr>
         </thead>
         <tbody>
           {images?.map((img) => (
-            <tr key={img._id}>
-              <td className="p-4 border-b">
+            <tr key={img._id} className='hover:bg-gray-600 border-b border-gray-700'>
+              <td className="p-4">
                 <img
                   src={`data:image/jpeg;base64,${img.imageData?.toString('base64')}`}
                   alt={"slider img"}
                   className="w-48 h-16 object-cover"
                 />
               </td>
-              <td className="border p-2 text-center w-24">
+              <td className="border-l border-gray-600 p-2 text-center w-24">
                 <FaTrashAlt
                   className="text-red-500 cursor-pointer mx-auto"
                   onClick={() => handleDeleteClick(img._id)} // Correctly reference handleDeleteClick
