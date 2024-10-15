@@ -43,7 +43,7 @@ const PasswordChangePage = () => {
       <ToastContainer />
       <h1 className="text-3xl font-bold text-white mt-10 mb-6 flex items-center"><FaKey className="mr-4 text-gray-400" />Change Your Password</h1>
 
-      <div className="bg-gray-900 shadow-lg rounded-lg px-10 pt-8 pb-10 mb-8 w-full max-w-md">
+      <div className="bg-gray-800 shadow-2xl rounded-lg px-10 pt-8 pb-10 mb-8 w-full max-w-md">
         <div className="mb-6">
           <input
             type="password"
