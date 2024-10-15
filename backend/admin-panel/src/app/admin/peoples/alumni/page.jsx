@@ -26,7 +26,7 @@ const AlumniPage = () => {
       setAlumniList(response.data);
     } catch (error) {
       console.error("Error fetching alumni:", error);
-      toast.error("Error fetching alumni!");
+      // toast.error("Error fetching alumni!");
     }
   };
 
@@ -61,38 +61,38 @@ const AlumniPage = () => {
       <h1 className="text-2xl font-bold text-center mb-4 text-white">Alumni Management</h1>
 
       {/* Alumni List Table */}
-      <table className="min-w-full bg-white border border-gray-200">
+      <table className="min-w-full bg-gray-800 border border-gray-700">
         <thead>
-          <tr className="bg-gray-100 text-left">
-            <th className="p-4 border-b">Image</th>
-            <th className="p-4 border-b">Name</th>
-            <th className="p-4 border-b">Position</th>
-            <th className="p-4 border-b">Action</th>
+          <tr className="bg-gray-700 text-left">
+            <th className="p-4 border-b text-white">Image</th>
+            <th className="p-4 border-b text-white">Name</th>
+            <th className="p-4 border-b text-white">Position</th>
+            <th className="p-4 border-b text-white">Action</th>
           </tr>
         </thead>
         <tbody>
-          {alumniList.map((alumni) => (
-            <tr key={alumni._id} className="hover:bg-gray-50 border-b">
+          {alumniList.map((member) => (
+            <tr key={member._id} className="hover:bg-gray-600 border-b border-gray-700">
               <td className="p-4">
                 <img
-                  src={`data:image/jpeg;base64,${alumni.img?.toString('base64')}`}
-                  alt={alumni.name}
+                  src={`data:image/jpeg;base64,${member.img?.toString('base64')}`}
+                  alt={member.name}
                   className="w-16 h-16 object-cover rounded-full"
                 />
               </td>
-              <td className="p-4 font-semibold">{alumni.name}</td>
-              <td className="p-4 font-bold">{alumni.position}</td>
-              <td className="p-4 w-24">
+              <td className="p-4 font-semibold text-white">{member.name}</td>
+              <td className="p-4 font-bold text-white">{member.position}</td>
+              <td className="p-4 w-24 ">
                 <div className="flex justify-center h-full space-x-4">
                   <FaEdit
-                    className="text-blue-500 cursor-pointer"
-                    onClick={() => handleUpdateAlumni(alumni._id)}
-                    title="Update alumni"
+                    className="text-yellow-400 cursor-pointer hover:text-yellow-500 transition-colors"
+                    onClick={() => handleUpdateAlumni(member._id)}
+                    title="Update member"
                   />
                   <FaTrashAlt
-                    className="text-red-500 cursor-pointer"
-                    onClick={() => handleDeleteClick(alumni._id)}
-                    title="Delete alumni"
+                    className="text-red-400 cursor-pointer hover:text-red-500 transition-colors"
+                    onClick={() => handleDeleteClick(member._id)}
+                    title="Delete member"
                   />
                 </div>
               </td>

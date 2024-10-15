@@ -6,12 +6,12 @@ const jwt = require("jsonwebtoken")
 // Create a new user (sign up)
 exports.createUser = async (req, res) => {
   try {
-    const { username, password } = req.body;
+    const { userId, name,email, password } = req.body;
 
     // Hash the password
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    const newUser = new User({ username, password: hashedPassword });
+    const newUser = new User({ userId, name,email, password: hashedPassword });
     await newUser.save();
 
     res.status(201).json({ message: 'User created successfully' });
@@ -23,10 +23,10 @@ exports.createUser = async (req, res) => {
 // Login user
 exports.loginUser = async (req, res) => {
   try {
-    const { username, password } = req.body;
+    const { userId, password } = req.body;
 
     // Find user by username (or email if you are using email for login)
-    const user = await User.findOne({ username });
+    const user = await User.findOne({ userId });
 
     if (!user) {
       return res.status(400).json({ message: 'Invalid credentials' });
@@ -41,7 +41,7 @@ exports.loginUser = async (req, res) => {
 
     // If using JWT, generate a token (optional)
     const token = jwt.sign(
-      { userId: user._id, username: user.username, role : user.role },
+      { id: user._id, userId: user.userId,name:user.name, role : user.role },
       process.env.JWT_SECRET, // Ensure you have this in your .env
       { expiresIn: '6h' }
     );

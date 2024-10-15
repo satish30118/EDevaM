@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { FaEdit, FaTrashAlt } from "react-icons/fa";
+import { FaEdit, FaPlus, FaTrashAlt } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from 'next/navigation';
@@ -83,38 +83,38 @@ const AwardsPage = () => {
   };
 
   return (
-    <div className="p-5 bg-gray-900">
+    <div className="p-3 bg-gray-800">
       <ToastContainer />
       
       <h1 className="text-2xl font-bold text-center mb-4 text-white">Award Management</h1>
       
       {/* Add New Award Section */}
-      <div className="mb-6">
+      <div className="bg-gray-900 p-5  rounded-lg shadow-lg mb-6">
         <textarea
           placeholder="Award content"
           value={awardContent}
           onChange={(e) => setAwardContent(e.target.value)}
-          className="border rounded px-4 py-2 w-full outline-none h-32 mb-2"
+          className="border rounded px-4 py-2 w-full outline-none h-32 mb-2 bg-gray-800 text-white"
         />
         <input
           type="number"
           placeholder="Award year"
           value={awardYear}
           onChange={(e) => setAwardYear(e.target.value)}
-          className="border outline-none rounded text-black px-4 py-2 w-full mb-2"
+          className="border rounded px-4 py-2 w-full outline-none mb-2 bg-gray-800 text-white"
         />
         <button
           onClick={handleAddAward}
-          className="bg-blue-500 text-white px-8 py-2 rounded hover:bg-blue-600"
+          className="bg-green-500 text-white px-8 py-2 mt-4 flex justify-center items-center rounded hover:bg-green-600"
         >
-          Add Award
+         <FaPlus className="mr-3"/> Add Award
         </button>
       </div>
       
       {/* Award List Table */}
-      <table className="min-w-full bg-white border border-gray-200">
+      <table className="min-w-full bg-gray-800 border border-gray-700  shadow-lg rounded-lg">
         <thead>
-          <tr className="bg-gray-100 text-left">
+          <tr className="bg-gray-700 text-white text-left">
             <th className="p-4 border-b">Award Content</th>
             <th className="p-4 border-b">Year</th>
             <th className="p-4 border-b">Action</th>
@@ -122,8 +122,8 @@ const AwardsPage = () => {
         </thead>
         <tbody>
           {awardList.map((award) => (
-            <tr key={award._id} className="hover:bg-gray-50 border-b">
-              <td className="p-4 font-semibold">{award.content}</td>
+            <tr key={award._id} className="hover:bg-gray-600 text-white bg-gray-800 border-b border-gray-700">
+              <td className="p-4">{award.content}</td>
               <td className="p-4 w-10 font-bold">{award.year}</td>
               <td className="p-4 w-24 ">
                 <div className="flex justify-center h-full space-x-4">

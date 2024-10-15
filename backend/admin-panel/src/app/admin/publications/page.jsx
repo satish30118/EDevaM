@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { FaEdit, FaTrashAlt } from "react-icons/fa";
+import { FaEdit, FaPlus, FaTrashAlt } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from 'next/navigation';
@@ -82,47 +82,47 @@ const PublicationPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 px-5 py-5">
+    <div className="min-h-screen bg-gray-800 px-3 py-3">
       <ToastContainer />
       
       <h1 className="text-3xl font-bold text-center mb-6 text-white">Publication Management</h1>
       
       {/* Add New Publication Section */}
-      <div className="mb-6">
+      <div className="bg-gray-900 p-5  rounded-lg shadow-lg mb-6">
         <textarea
           placeholder="Publication content"
           value={publicationContent}
           onChange={(e) => setPublicationContent(e.target.value)}
-          className="border rounded-lg px-4 py-2 w-full outline-none h-32 mb-2 focus:ring-2 focus:ring-blue-500"
+          className="border rounded px-4 py-2 w-full outline-none mb-2 h-32 bg-gray-800 text-white"
         />
         <input
           type="number"
           placeholder="Publication year"
           value={publicationYear}
           onChange={(e) => setPublicationYear(e.target.value)}
-          className="border rounded-lg text-black px-4 py-2 w-full mb-2 focus:ring-2 focus:ring-blue-500"
+          className="border rounded px-4 py-2 w-full outline-none mb-2 bg-gray-800 text-white"
         />
         <button
           onClick={handleAddPublication}
-          className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition duration-200"
+          className="bg-green-600 my-3 text-white px-4 py-2 w-1/3 rounded flex items-center justify-center hover:bg-green-700 transition duration-300"
         >
-          Add Publication
+         <FaPlus className="mr-2" /> Add Publication
         </button>
       </div>
       
       {/* Publication List Table */}
-      <table className="min-w-full bg-gray-700 border border-gray-600 rounded-lg">
+      <table className="min-w-full bg-gray-800 border border-gray-700  shadow-lg rounded-lg">
         <thead>
-          <tr className="bg-gray-600 text-left">
-            <th className="p-4 border-b border-gray-600 text-white">Publication Content</th>
-            <th className="p-4 border-b border-gray-600 text-white">Year</th>
-            <th className="p-4 border-b border-gray-600 text-white">Action</th>
+          <tr className="bg-gray-700 text-left">
+            <th className="p-4 border-b border-gray-700 text-white">Publication Content</th>
+            <th className="p-4 border-b border-gray-700 text-white">Year</th>
+            <th className="p-4 border-b border-gray-700 text-white">Action</th>
           </tr>
         </thead>
         <tbody>
           {publicationList.map((publication) => (
-            <tr key={publication.id} className="hover:bg-gray-600 border-b border-gray-600">
-              <td className="p-4 font-semibold text-white">{publication.content}</td>
+            <tr key={publication.id} className="hover:bg-gray-600 border-b border-gray-700">
+              <td className="p-4 text-white">{publication.content}</td>
               <td className="p-4 font-bold text-white">{publication.year}</td>
               <td className="p-4">
                 <div className="flex justify-center space-x-4">

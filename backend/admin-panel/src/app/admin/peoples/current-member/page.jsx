@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { FaEdit, FaTrashAlt } from "react-icons/fa";
+import { FaEdit, FaPlus, FaTrashAlt } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from 'next/navigation';
@@ -83,13 +83,13 @@ const MemberPage = () => {
   };
 
   return (
-    <div className="p-3 bg-gray-900 min-h-screen">
+    <div className="p-3 bg-gray-800 min-h-screen">
       <ToastContainer />
 
       <h1 className="text-2xl font-bold text-center mb-4 text-white">Lab Members Management</h1>
 
       {/* Add New Member Section */}
-      <div className="mb-6">
+      <div className="bg-gray-900 p-5  rounded-lg shadow-lg mb-6">
         <input
           type="text"
           placeholder="Member Name"
@@ -124,14 +124,14 @@ const MemberPage = () => {
         />
         <button
           onClick={handleAddMember}
-          className="bg-blue-600 text-white px-8 py-2 rounded mx-4 hover:bg-blue-700 transition-colors"
+          className="bg-green-600 mx-6 my-3 text-white px-4 py-2 rounded inline-flex items-center justify-center hover:bg-green-700 transition duration-300"
         >
-          Add Member
+           <FaPlus className="mr-2" /> Add Member
         </button>
       </div>
 
       {/* Member List Table */}
-      <table className="min-w-full bg-gray-800 border border-gray-700">
+      <table className="min-w-full bg-gray-800 border border-gray-700  shadow-lg rounded-lg">
         <thead>
           <tr className="bg-gray-700 text-left">
             <th className="p-4 border-b text-white">Image</th>

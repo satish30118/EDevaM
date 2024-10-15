@@ -15,7 +15,6 @@ const UserManagementPage = () => {
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
-  const [userRole, setUserRole] = useState("");
   const [deleteId, setDeleteId] = useState(null);
   const router = useRouter();
 
@@ -33,19 +32,17 @@ const UserManagementPage = () => {
   };
 
   const handleAddUser = async () => {
-    if (userName.trim() && userEmail.trim() && userPassword.trim() && userRole.trim() && userId.trim()) {
+    if (userName.trim() && userEmail.trim() && userPassword.trim() && userId.trim()) {
       try {
-        await axios.post("/api/users", {
+        await axios.post("/api/users/register", {
           name: userName,
           email: userEmail,
           password: userPassword,
-          role: userRole,
           userId: userId,
         });
         setUserName("");
         setUserEmail("");
         setUserPassword("");
-        setUserRole("");
         setUserId("");
         toast.success("User added successfully!");
         fetchUsers();
@@ -81,7 +78,7 @@ const UserManagementPage = () => {
   };
 
   return (
-    <div className="px-6 py-4 bg-gray-900 min-h-screen">
+    <div className="px-3 py-4 bg-gray-800 min-h-screen">
       <ToastContainer />
 
       <h1 className="text-3xl font-bold text-center text-white mb-4">User Management</h1>
@@ -151,11 +148,11 @@ const UserManagementPage = () => {
               <td className="p-4 font-bold text-white">{user.role}</td>
               <td className="p-4 w-24">
                 <div className="flex justify-center space-x-4">
-                  <FaEdit
+                  {/* <FaEdit
                     className="text-blue-400 cursor-pointer"
                     onClick={() => handleUpdateUser(user._id)}
                     title="Update user"
-                  />
+                  /> */}
                   <FaTrashAlt
                     className="text-red-400 cursor-pointer"
                     onClick={() => handleDeleteClick(user._id)}

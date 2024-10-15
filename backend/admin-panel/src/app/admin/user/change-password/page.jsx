@@ -39,7 +39,7 @@ const PasswordChangePage = () => {
   };
 
   return (
-    <div className="flex flex-col items-center min-h-screen ">
+    <div className="flex flex-col items-center min-h-screen bg-gray-800">
       <ToastContainer />
       <h1 className="text-3xl font-bold text-white mt-10 mb-6 flex items-center"><FaKey className="mr-4 text-gray-400" />Change Your Password</h1>
 

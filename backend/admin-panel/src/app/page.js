@@ -6,16 +6,15 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from 'next/navigation';
 import { AuthContext } from './context/AuthContext';
+import { FaUser, FaLock } from 'react-icons/fa';
 
 const LoginPage = () => {
-  const [username, setUserName] = useState('');
+  const [userId, setUserId] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const router = useRouter();
-  
-  // Access saveToken from AuthContext
   const { saveToken } = useContext(AuthContext);
-  
+
   axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_URL;
 
   const handleLogin = async (e) => {
@@ -23,15 +22,12 @@ const LoginPage = () => {
     setLoading(true);
     
     try {
-      const response = await axios.post('/api/users/login', { username, password });
+      const response = await axios.post('/api/users/login', { userId, password });
       
       if (response.status === 200) {
-        const { token } = response.data; // Assuming the token is returned in response
-        saveToken(token); // Save token using the context
-        
+        const { token } = response.data;
+        saveToken(token);
         toast.success('Logged in successfully!');
-        
-        // Redirect after successful login
         router.push('/admin');
       }
     } catch (error) {
@@ -44,43 +40,50 @@ const LoginPage = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-800">
       <ToastContainer />
-      <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
-        <h2 className="text-2xl font-semibold text-center text-gray-700 mb-6">Admin Login</h2>
+      <div className="bg-gray-900 text-white p-10 rounded-xl shadow-2xl max-w-md w-full">
+        <h2 className="text-3xl font-bold text-center mb-8">Admin Login</h2>
         
         <form onSubmit={handleLogin}>
-          <div className="mb-4">
-            <label htmlFor="username" className="block text-gray-700">Username</label>
-            <input
-              type="text"
-              id="username"
-              value={username}
-              onChange={(e) => setUserName(e.target.value)}
-              required
-              className="w-full p-3 border border-gray-300 rounded mt-2 focus:outline-none focus:ring focus:ring-indigo-500"
-            />
+          <div className="mb-5">
+            <label htmlFor="userId" className="block mb-1 font-medium">UserId</label>
+            <div className="flex items-center border rounded-lg px-3 py-2 bg-gray-0 shadow-inner">
+              <FaUser className="text-gray-400 mr-3" />
+              <input
+                type="text"
+                id="userID"
+                value={userId}
+                onChange={(e) => setUserId(e.target.value)}
+                required
+                className="w-full bg-transparent focus:outline-none p-1 text-gray-600 placeholder-gray-400"
+                placeholder="Enter your user ID"
+              />
+            </div>
           </div>
           
           <div className="mb-6">
-            <label htmlFor="password" className="block text-gray-700">Password</label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              className="w-full p-3 border border-gray-300 rounded mt-2 focus:outline-none focus:ring focus:ring-indigo-500"
-            />
+            <label htmlFor="password" className="block mb-1 font-medium">Password</label>
+            <div className="flex items-center border rounded-lg px-3 py-2 bg-gray-0 shadow-inner">
+              <FaLock className="text-gray-400 mr-3" />
+              <input
+                type="password"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                className="w-full bg-transparent focus:outline-none p-1 text-gray-600 placeholder-gray-400"
+                placeholder="Enter your password"
+              />
+            </div>
           </div>
           
           <button
             type="submit"
-            className="w-full bg-indigo-500 text-white py-3 rounded-lg hover:bg-indigo-600 transition duration-300"
+            className="w-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white py-3 rounded-lg hover:bg-gradient-to-l transition duration-300 font-semibold"
             disabled={loading}
           >
             {loading ? 'Logging in...' : 'Login'}
           </button>
         </form>
-        
       </div>
     </div>
   );
