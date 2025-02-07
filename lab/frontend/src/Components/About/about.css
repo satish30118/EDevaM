@@ -1,0 +1,173 @@
+.about{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 13vh;
+    padding: 70px 50px;
+    font-size: 35px;
+}
+.about-top{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('about-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 30px;
+    padding-bottom: 140px;
+}
+.about-top h1{
+    font-family: 'IBM Plex Sans KR';
+font-style: normal;
+font-weight: 700;
+font-size: 39.9486px;
+line-height: 60px;
+letter-spacing: 0.01em;
+color: #1968B3;
+}
+.about-t-1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10vw;
+}
+.about-t-1 p{
+    width: 60vw;
+    font-family: 'IBM Plex Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 29px;
+    letter-spacing: 0.01em;
+}
+.about-t-1 img{
+    width: 250px;
+    height: 250px;
+}
+
+.about-bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    padding-bottom: 140px;
+    gap: 8vh;
+}
+.about-bottom h1{
+    font-family: 'IBM Plex Sans KR';
+font-style: normal;
+font-weight: 700;
+font-size: 39.9486px;
+line-height: 60px;
+letter-spacing: 0.01em;
+color: #1968B3;
+}
+
+.about-b-1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10vw;
+}
+.about-b-1 p{
+    width: 60vw;
+    font-family: 'IBM Plex Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 19.2026px;
+    line-height: 29px;
+    letter-spacing: 0.01em;
+}
+.about-b-1 img{
+    width: 250px;
+    height: 250px;
+}
+@media only screen and (max-width:1050px){
+    .about-t-1{
+        gap: 5vw;
+    }
+    .about-b-1{
+        gap: 5vw;
+    }
+}
+@media only screen and (max-width:900px){
+    .about-t-1{
+        gap: 2vw;
+    }
+    .about-b-1{
+        gap: 2vw;
+    }
+}
+@media only screen and (max-width:820px){
+    .about-t-1{
+        gap: 1vw;
+    }
+    .about-t-1 p{
+        font-size: 14px;
+    }
+    .about-t-1 img{
+        width: 150px;
+        height: 150px;
+    }
+    .about-b-1 img{
+        width: 150px;
+        height: 150px;
+    }
+    .about-b-1 p{
+        font-size: 14px;
+    }
+    .about-b-1{
+        gap: 1vw;
+    }
+}
+@media only screen and (max-width:700px){
+    .about-t-1{
+        flex-direction: column-reverse;
+    }
+    .about-b-1{
+        flex-direction: column;
+    }
+}
+@media only screen and (max-width:450px){
+    .about{
+        gap: 0;
+    }
+    .about-top{
+        padding: 25px;
+    }
+    .about-top h1{
+        font-size: 34px;
+    }
+    .about-bottom h1{
+        font-size: 34px;
+    }
+    
+}
+@media only screen and (max-width:350px){
+    .about-top h1{
+        font-size: 28px;
+    }
+    .about-bottom h1{
+        font-size: 28px;
+    }
+    .about-bottom{
+        padding: 25px;
+    }
+    .about-t-1 img{
+        width: 170px;
+        height: 170px;
+    }
+    .about-b-1 img{
+        width: 170px;
+        height: 170px;
+    }
+    .about-t-1 p{
+        font-size: 14px;
+    }
+    .about-b-1 p{
+        font-size: 14px;
+    }
+}

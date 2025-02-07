@@ -1,0 +1,147 @@
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px 50px;
+    gap: 15vh;
+}
+
+.c-top {
+    display: flex;
+    flex-direction: column;
+    /* gap: 0vh; */
+}
+
+.c-top h1 {
+    font-family: 'IBM Plex Sans KR';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 144px;
+    letter-spacing: 0.01em;
+
+    color: #175FA2;
+}
+
+.c-top p {
+    font-family: 'IBM Plex Sans KR';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 60px;
+    letter-spacing: 0.01em;
+
+    color: #000000;
+
+}
+
+.c-bottom {
+    background-image: url('contact-bg.png');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    padding: 70px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6vh;
+    align-items: center;
+}
+
+.c-bottom span {
+    font-family: 'IBM Plex Sans KR';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    /* line-height: 144px; */
+    letter-spacing: 0.01em;
+}
+
+.c-bottom p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'IBM Plex Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    /* line-height: 144px; */
+    /* letter-spacing: 0.01em; */
+}
+
+.c-bottom .s-links {
+    display: flex;
+    gap: 2vw;
+}
+
+@media only screen and (max-width:964px) {
+    .c-bottom p {
+        /* flex-direction: column; */
+        font-size: 20px;
+    }
+    .c-top p {
+        font-size: 25px;
+    }
+}
+
+@media only screen and (max-width:830px) {
+    .c-bottom p {
+        /* flex-direction: column; */
+        font-size: 2vw;
+    }
+    .c-top p {
+        font-size: 23px;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .c-top p {
+        font-size: 20px;
+    }
+    .c-bottom p {
+        flex-direction: column;
+        font-size: 2.5vw;
+    }
+}
+
+@media only screen and (max-width:470px) {
+    .c-top h1 {
+        font-size: 55px;
+        line-height: 100px;
+    }
+
+    .c-top p {
+        font-size: 18px;
+    }
+
+    .c-bottom {
+        padding: 50px 30px;
+    }
+
+    .c-bottom p {
+        font-size: 15px;
+    }
+
+    .c-bottom span {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width:430px) {
+    .c-bottom p {
+        font-size: 15px;
+    }
+
+    .c-bottom span {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width:380px) {
+    .c-top h1 {
+        font-size: 40px;
+    }
+
+    .c-top p {
+        font-size: 20px;
+    }
+}
